@@ -15,6 +15,7 @@ public:
 
 Node* takeinput(){
   int data;
+  
   cin >>data;
   Node *head = NULL;
   Node *tail = NULL;
