@@ -21,6 +21,7 @@ Constraints :
 Time Limit: 1sec
 
 Where 'M' is the size of the singly linked list.
+
 Sample Input 1 :
 1
 1 2 3 3 4 3 4 5 4 5 5 7 -1
