@@ -38,19 +38,25 @@ Node* takeinput()
 }
 
 Node* skipMdeleteN(Node *head,int m,int n){
-  Node *p = head;
-  while(m!=1)
+  Node *t1 = head;
+  Node *t2 = NULL;
+
+  while(t1!=NULL && t1->next!= NULL)
   {
-    p = p->next;
-    m--;
+    int c1 = 1,c2 = 0;
+    while(c1!=m && t1!=NULL)
+    {
+      t1 = t1->next;
+      c1++;
+    }
+    t2 = t1->next;
+    while(c2!= n && t2!= NULL){
+      t2 = t2->next;
+      c2++;
+    }
+    t1->next = t2;
+    t1 = t2;
   }
-  Node *c = p->next;
-  while(n!=0)
-  {
-    c = c->next;
-    n--;
-  }
-  p->next = c;
   return head;
 }
 
