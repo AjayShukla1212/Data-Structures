@@ -38,29 +38,48 @@ Node* takeinput()
 }
 
 Node* swapNodes(Node *head,int i,int j){
-  Node *p1 = NULL, *c1 = head, *n1 = head->next;
-  Node *p2 = NULL, *c2 = head, *n2 = head->next;
-  while(i!=0){
-    p1 = c1;
-    c1 = n1;
-    n1 = n1->next;
-    i--;
-  }
-  while(j!=0)
-  {
-    p2 = c2;
-    c2 = n2;
-    n2 = n2->next;
-    j--;
-  }
-  p2->next = c1;
-  p1->next = c2;
-  c1->next = n2;
-  c2->next = n1;
+	node *p1 = NULL;
+	node *c1 = head;
+	node *p2 = NULL;
+    node *c2 = head;
 
+    node* temp = head; //for moving ahead
+    node* prev = NULL;
+    int pos = 0; //for checking if we are at i or j
+    while(temp != NULL)
+    {
+        if(pos == i) {
+            p1 = prev;
+            c1 = temp;
+        }
+        else if(pos == j) {
+            p2 = prev;
+            c2 = temp;
+        }
 
-  return head;
-}
+        prev = temp;
+        temp = temp->next;
+        pos++;
+    }
+
+    if(p1 != NULL) {
+        p1->next = c2;
+    }
+    else
+        head = c2;
+
+    if(p2 != NULL) {
+        p2->next = c1;
+    }
+    else
+        head = c1;
+
+    node* t = c2->next;
+    c2->next = c1->next;
+    c1->next = t;
+
+    return head;
+
 
 void print(Node *head)
 {
