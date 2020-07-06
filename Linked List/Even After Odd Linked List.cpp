@@ -1,3 +1,28 @@
+/*
+Even after Odd LinkedList
+
+
+Arrange elements in a given Linked List such that, all even numbers are placed after odd numbers.
+Respective order of elements should remain same.
+
+Note: Input and Output has already managed for you. You don't need to print the elements, instead
+return the head of updated LL.
+
+Input format:
+Linked list elements (separated by space and terminated by -1)
+
+Output format:
+Print the elements of updated Linked list.
+
+Sample Input 1 :
+1 4 5 2 -1
+
+Sample Output 1 :
+1 5 4 2 
+*/
+
+
+
 #include<iostream>
 using namespace std;
 
@@ -77,6 +102,11 @@ Node* arrange_LinkedList(Node* head)
     evenT->next = NULL;
     return evenH;
   }
+  else if (evenH == NULL)
+    {
+        oddT->next =NULL;
+        return oddH;
+    }
   else{
     evenT->next = NULL;
     oddT->next = evenH;
