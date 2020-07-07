@@ -18,4 +18,4 @@ Features of stacks
 4.Size of stack changes with each push() and pop() operation. Each push() and pop() operation increases and decreases the size of the stack by 1, respectively.
 
 
-I Have Represented The Different Ways To Make Stacks Either By Arrays Or By Linkd Lists !!
+I Have Represented The Different Ways To Make Stacks Either By Arrays Or By Linked Lists !!
