@@ -25,8 +25,11 @@ public:
 int main()
 
 {
-  Pair <int,string> p1;
-  p1.setX(10);
+  Pair <Pair<int,int> , string> p1;
+  Pair <int,int> p2;
+  p2.setX(15);
+  p2.setY(16);
+  p1.setX(p2);
   p1.setY("Ajay");
-  cout <<p1.getX() <<" "<<p1.getY()<<endl;
+  cout <<p1.getX().getX() <<" "<<p1.getX().getY()<<" "<<p1.getY()<<endl;
 }
