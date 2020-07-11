@@ -15,6 +15,7 @@ public:
     firstIndex = -1;
   }
 
+
   bool isEmpty(){
     return size==0;
   }
