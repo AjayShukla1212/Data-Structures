@@ -1,10 +1,10 @@
 #include<iostream>
 using namespace std;
-#include"QueueUsingLinkedList.h"
+#include"QueueUsingArray.h"
 
 int main()
 {
-  QueueUsingLL<int> q;
+  QueueUsingArrays<int> q;
   q.enqueue(10);
   q.enqueue(20);
   q.enqueue(30);
