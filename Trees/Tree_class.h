@@ -10,4 +10,10 @@ public:
     {
       this->data = data;
     }
+    ~TreeNode(){
+      for(int i=0;children.size();i++)
+      {
+        delete children[i];
+      }
+    }
 };
