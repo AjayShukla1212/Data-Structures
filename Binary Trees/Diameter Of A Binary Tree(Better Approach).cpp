@@ -69,6 +69,8 @@ void print(BTN<int>* root){
   }
 }
 
+// CREATING a CLASS PAIR FUNCTION FOR GETTING HEIGHT AND DIAMETERE AS A RESULT !!
+
 pair<int,int> heightDiameter(BTN<int>* root)
 {
   if(root==NULL)
