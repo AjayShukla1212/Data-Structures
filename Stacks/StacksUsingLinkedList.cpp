@@ -75,11 +75,11 @@ int main()
   cout <<"Current Top "<<s.top()<<endl;
   s.push(50);
   cout <<"Current Top "<<s.top()<<endl;
-  cout <<"Current Length "<<s.getsize()<<endl;
+  // cout <<"Current Length "<<s.getsize()<<endl;
   cout <<s.pop()<<endl;
   cout <<s.pop()<<endl;
-  cout <<s.pop()<<endl;
-  cout <<"Current Length "<<s.getsize()<<endl;
+  // cout <<s.pop()<<endl;
+  // cout <<"Current Length "<<s.getsize()<<endl;
   cout <<s.isempty()<<endl;
 
 }

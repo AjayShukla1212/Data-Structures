@@ -44,7 +44,7 @@ int maximum(BinaryTreeNode<int>* root)
 
 
 bool isBST(BinaryTreeNode<int> *root){
-      
+
     if(root==NULL)
     {
         return true;
@@ -98,3 +98,4 @@ int main() {
     }
     delete root;
 }
+ 
