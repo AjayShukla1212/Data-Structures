@@ -23,7 +23,19 @@ class BinaryTreeNode {
 };
 
 using namespace std;
-#include "solution.h"
+
+
+
+void insertDuplicateNode(BinaryTreeNode<int> *root) {
+    if(root==NULL){
+      return;
+    }
+    BinaryTreeNode<int> *newNode = new BinaryTreeNode<int> (root->data);
+    newNode->left = root->left;
+    root->left = newNode;
+    insertDuplicateNode(root->left->left);
+    insertDuplicateNode(root->right);
+}
 
 BinaryTreeNode<int>* takeInput() {
     int rootData;
@@ -88,12 +100,3 @@ int main() {
     printLevelATNewLine(root);
     delete root;
 }
-
-
-/*
-void insertDuplicateNode(BinaryTreeNode<int> *root) {
-    // Write your code here
-
-}
-
-*/
