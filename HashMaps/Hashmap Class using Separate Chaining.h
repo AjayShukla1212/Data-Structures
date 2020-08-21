@@ -10,7 +10,7 @@ public:
 // Constructor
   mapNode(string key,V value){
     this->key = key;
-    thisthis->value = value;
+    this->value = value;
     next = NULL;
   }
 
@@ -25,12 +25,12 @@ class ourmap{
 public:
   mapNode<V>** bucket;
   int count;
-  int numbucket
+  int numbucket;
 //Constructor
   ourmap(){
-    bucket = 5;
+    numbucket = 5;
     count = 0;
-    buckets = new mapNode<int>* [numbucket];
+    bucket = new mapNode<int>* [numbucket];
     for(int i=0;i<numbucket;i++){
       bucket[i] = NULL;
     }
@@ -44,7 +44,7 @@ public:
   }
 
   //Return Size
-  int size{
+  int size(){
     return count;
   }
 
@@ -65,6 +65,32 @@ private:
   }
 
 public:
+ void rehash(){
+   mapNode<V>** temp = bucket;
+    bucket = new mapNode<V>* [2*numbucket];
+    for(int i=0;i<2*numbucket;i++){
+      bucket[i] = NULL;
+    }
+    int oldBucketCount = numbucket;
+    numbucket *=2;
+    count = 0;
+    for(int i=0;i<numbucket;i++){
+      mapNode<int>* head = temp[i];
+      while(head!=NULL){
+        string key = head->key;
+        V value = head->value;
+        insert(key,value);
+        head = head->next;
+      }
+    }
+    for(int i=0;i<numbucket;i++){
+      mapNode<V>* head2 = temp[i];
+      delete head2;
+    }
+    delete temp;
+ }
+
+
   void insert(string key,V value){
       int bucketIndex = getIndex(key);
       mapNode<V>* head = bucket[bucketIndex];
@@ -80,6 +106,10 @@ public:
       node->next = head;
       bucket[bucketIndex] = node;
       count++;     // To Update The number of Filled Elements in the array
+      double loadFactor = (1.0*count)/numbucket;
+      if(loadFactor>0.7){
+        rehash();
+      }
   }
 
 
