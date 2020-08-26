@@ -15,14 +15,14 @@ void findMedian(int a[], int n){
     for(int i=1;i<n;i++){
         //Special Case Only
 
-
-        if(minheap.empty()){
-            maxheap.push(a[i]);
-            int temp = maxheap.top();
-            maxheap.pop();
-            minheap.push(temp);
-        }
-        else if(a[i]>maxheap.top()){
+        int x = a[i];
+        // if(minheap.empty()){
+        //     maxheap.push(a[i]);
+        //     int temp = maxheap.top();
+        //     maxheap.pop();
+        //     minheap.push(temp);
+        // }
+        if(x>maxheap.top()){
             minheap.push(a[i]);
         }
         else if(a[i]<maxheap.top()){
